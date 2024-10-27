@@ -206,13 +206,10 @@ export const DATA = {
       technologies: [
         "Next.js",
         "Typescript",
-        "PostgreSQL",
-        "Prisma",
         "TailwindCSS",
         "Shadcn UI",
         "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
+        "Vercel",
       ],
       links: [
         {

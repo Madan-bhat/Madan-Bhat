@@ -7,6 +7,7 @@ import GYANASETU from "../../public/GYANASETU.jpg";
 
 export const DATA = {
   name: "Madan Bhat",
+  initials: "MB",
   url: "https://imadanbhat.vercel.app",
   location: "India, UDUPI",
   locationLink: "",

@@ -214,7 +214,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://gyanasetu.vercel.app",
+          href: "https://gyanasetu-admin.vercel.app",
           icon: <Icons.globe className="size-3" />,
         },
       ],

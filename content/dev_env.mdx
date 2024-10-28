@@ -1,0 +1,227 @@
+---
+title: "React Native Dev Env setup
+publishedAt: "2024-10-28"
+summary: "How to Set Up a React Native Development Environment on macOS, Windows, and Linux"
+---
+
+## How to Set Up a React Native Development Environment on macOS, Windows, and Linux
+
+React Native enables you to build mobile applications using JavaScript and React, allowing you to develop for both iOS and Android using a single codebase. Setting up your environment for React Native varies slightly across macOS, Windows, and Linux, so let’s go through the steps for each platform.
+
+### Prerequisites
+
+Before starting, ensure you have:
+
+- Node.js (recommended: latest LTS version)
+- A package manager (Yarn or npm)
+- Java Development Kit (JDK) for Android development
+- Xcode (macOS only) for iOS development
+
+### 1. Setting up on macOS
+
+Since macOS allows you to develop for both iOS and Android, it’s an ideal choice for React Native.
+
+#### Step 1: Install Homebrew (optional but recommended)
+
+Homebrew is a package manager that simplifies the installation of software on macOS.
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+#### Step 2: Install Node and Watchman
+
+Use Homebrew to install Node.js and Watchman, a tool by Facebook for monitoring file changes.
+
+```bash
+brew install node
+brew install watchman
+```
+
+#### Step 3: Install JDK for Android Development
+
+You can install the JDK through Homebrew:
+
+```bash
+brew install --cask adoptopenjdk/openjdk/adoptopenjdk8
+```
+
+#### Step 4: Install Xcode
+
+Install Xcode from the Mac App Store and ensure you have the command line tools:
+
+```bash
+xcode-select --install
+```
+
+Once Xcode is installed, open it and navigate to **Xcode > Preferences > Locations** to confirm the Command Line Tools location.
+
+#### Step 5: Install Android Studio
+
+Download [Android Studio](https://developer.android.com/studio) and install it. Follow these steps:
+
+1. Open Android Studio, go to **Preferences > Appearance & Behavior > System Settings > Android SDK**.
+2. Install **Android SDK**, **Android SDK Platform**, and **Android Virtual Device** (AVD) here.
+3. Go to **SDK Tools** tab and check **Android SDK Build-Tools**, **NDK**, **LLDB**, and **Android Emulator**.
+
+#### Step 6: Configure Environment Variables
+
+Edit your `~/.zshrc` or `~/.bash_profile` file and add the Android SDK path:
+
+```bash
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools
+```
+
+Then reload the terminal:
+
+```bash
+source ~/.zshrc  # or source ~/.bash_profile
+```
+
+#### Step 7: Install React Native CLI
+
+Install the React Native CLI globally:
+
+```bash
+npm install -g react-native-cli
+```
+
+#### Step 8: Create a New React Native Project
+
+```bash
+npx react-native init MyNewProject
+```
+
+Your environment is now ready to develop for both iOS and Android on macOS!
+
+---
+
+### 2. Setting up on Windows
+
+On Windows, you can develop for Android, but iOS development requires macOS.
+
+#### Step 1: Install Node, Python2, and JDK
+
+Use the **Chocolatey** package manager to install Node.js, Python2, and the Java Development Kit.
+
+```powershell
+choco install -y nodejs.install python2 openjdk8
+```
+
+#### Step 2: Install Android Studio
+
+Download and install [Android Studio](https://developer.android.com/studio). Follow the setup steps in Android Studio to install the Android SDK, Android SDK Platform, and AVD.
+
+#### Step 3: Configure Environment Variables
+
+Add Android SDK paths to your environment variables:
+
+1. Go to **System Properties > Advanced > Environment Variables**.
+2. Add a new system variable for `ANDROID_HOME` and set it to your Android SDK location (e.g., `C:\Users\YourName\AppData\Local\Android\Sdk`).
+3. Add the following to the `Path` variable:
+   - `%ANDROID_HOME%\platform-tools`
+   - `%ANDROID_HOME%\emulator`
+   - `%ANDROID_HOME%\tools`
+
+#### Step 4: Install React Native CLI
+
+Open PowerShell as an administrator and run:
+
+```bash
+npm install -g react-native-cli
+```
+
+#### Step 5: Create a New React Native Project
+
+```bash
+npx react-native init MyNewProject
+```
+
+Your environment is now ready for Android development on Windows!
+
+---
+
+### 3. Setting up on Linux
+
+On Linux, you can develop for Android but not for iOS, as Xcode is only available on macOS.
+
+#### Step 1: Install Node and npm
+
+Use your distribution’s package manager to install Node.js.
+
+For Debian-based systems (e.g., Ubuntu):
+
+```bash
+sudo apt update
+sudo apt install nodejs npm
+```
+
+#### Step 2: Install Watchman (optional)
+
+Watchman can be helpful for monitoring file changes. Install it using the package manager:
+
+```bash
+sudo apt install watchman
+```
+
+#### Step 3: Install JDK
+
+Install OpenJDK 8 or later.
+
+```bash
+sudo apt install openjdk-8-jdk
+```
+
+#### Step 4: Install Android Studio
+
+1. Download [Android Studio](https://developer.android.com/studio) and unzip the file.
+2. Move it to `/opt` and launch the `studio.sh` script:
+
+```bash
+sudo unzip android-studio-ide-*.zip -d /opt
+/opt/android-studio/bin/studio.sh
+```
+
+3. Follow the setup in Android Studio to install the SDK, SDK Platform, and AVD.
+
+#### Step 5: Configure Environment Variables
+
+Add Android SDK paths to your shell configuration file (`~/.bashrc` or `~/.zshrc`):
+
+```bash
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools
+```
+
+Reload the configuration file:
+
+```bash
+source ~/.bashrc  # or source ~/.zshrc
+```
+
+#### Step 6: Install React Native CLI
+
+Install the React Native CLI globally:
+
+```bash
+npm install -g react-native-cli
+```
+
+#### Step 7: Create a New React Native Project
+
+```bash
+npx react-native init MyNewProject
+```
+
+Your environment is now set up to develop React Native applications for Android on Linux!
+
+---
+
+### Conclusion
+
+After completing these steps for your respective OS, you’re ready to start building and running React Native applications! Whether you’re developing for Android on Windows and Linux or building for both iOS and Android on macOS, React Native’s flexibility allows for cross-platform development with a single codebase.

@@ -12,7 +12,7 @@ export const DATA = {
   location: "India, UDUPI",
   locationLink: "",
   description:
-    "I am 17 year old beginner software developer passionate about coding",
+    "I am 18 year old beginner software developer passionate about coding",
   summary:
     "Hello! I'm Madan Bhat, a passionate Frontend Developer based in Udupi, Karnataka. I love turning complex problems into simple,  beautiful, and intuitive designs.",
   avatarUrl: "/me.png",
